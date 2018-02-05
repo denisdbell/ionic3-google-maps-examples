@@ -25,9 +25,9 @@ export class Example_2Page {
   }
 
   startMap() {
-    let posMaceio = { lat: -9.616139, lng: -35.817239 }
+    let posMaceio = { lat: 18.1096, lng: -77.2975 }
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 12,
+      zoom: 9,
       center: posMaceio,
       mapTypeId: 'roadmap'
     });
