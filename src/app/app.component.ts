@@ -18,11 +18,7 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'First example', component: 'Example_1Page' },
-      { title: 'Second example', component: 'Example_2Page' },
-      { title: 'Third example', component: 'Example_3Page' },
-      { title: 'Fourth example', component: 'Example_4Page' },
-      { title: 'Fifth example', component: 'Example_5Page' },
+      { title: 'Guiness Sound Of Greatness', component: 'Example_2Page' },
     ];
 
   }
