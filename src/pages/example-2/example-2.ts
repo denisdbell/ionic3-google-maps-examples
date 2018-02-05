@@ -15,6 +15,19 @@ export class Example_2Page {
   map: any;
 
   labels: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  
+  contentString: string = '<div id="content">'+
+                          '<div id="siteNotice">'+
+                          '</div>'+
+                          '<h1 id="firstHeading" class="firstHeading">Sound Love VS Love Sound Disco</h1>'+
+                          '<div id="bodyContent">'+
+                          '<p>' +
+                          '<img style="-webkit-user-select: none;background-position: 0px 0px, 10px 10px;background-size:' +
+                          '20px 20px;background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);" src="https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/d/0/8/f/6790-4721-477c-b467-973790ca3423.jpg">' +
+                          '<p>'+
+                          '</div>'+
+                          '</div>';
+
   labelIndex = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -36,7 +49,14 @@ export class Example_2Page {
       this.addMarker(event.latLng, this.map);
     });
 
+    
   }
+
+
+  infowindow = new google.maps.InfoWindow({
+    content: this.contentString
+  });
+
 
   addMarker(location, map) {
     let marker = new google.maps.Marker({
@@ -44,7 +64,13 @@ export class Example_2Page {
       label: this.labels[this.labelIndex++ % this.labels.length],
       map: map
     });
+
+    google.maps.event.addListener(marker, 'click', (event) => {
+      this.infowindow.open(this.map, marker);
+    });
   }
+
+
 
 
 }
