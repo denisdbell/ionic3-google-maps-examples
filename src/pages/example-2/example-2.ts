@@ -244,9 +244,8 @@ export class Example_2Page {
 
 
   infowindow = new google.maps.InfoWindow({
-    content: this.contentString
-  });
 
+  });
 
   addMarker( mapMarker: MapMarker ,map) {
     let marker = new google.maps.Marker({
@@ -257,6 +256,9 @@ export class Example_2Page {
     });
 
     google.maps.event.addListener(marker, 'click', (event) => {
+      this.infowindow = new google.maps.InfoWindow({
+        content: mapMarker.description
+      });
       this.infowindow.open(this.map, marker);
     });
   }
