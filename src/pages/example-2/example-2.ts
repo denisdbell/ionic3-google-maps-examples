@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapMarker } from '../../app/models/MapMarker';
 import { MapMarkerService } from '../../app/services/map_marker_service';
+import * as _ from 'underscore';
 
 declare const google;
 
@@ -17,6 +18,10 @@ export class Example_2Page {
   map: any;
 
   labels: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  eventType: string [] = [];
+
+  markers: any = [];
   
   contentString: string = '<div id="content">'+
                           '<div id="siteNotice">'+
@@ -37,7 +42,7 @@ export class Example_2Page {
 
   ionViewDidLoad() {
     this.startMap();
-    this.populateMarkers();
+    //this.populateMarkers();
   }
 
   startMap() {
@@ -238,10 +243,7 @@ export class Example_2Page {
       console.log(event.latLng);
       //this.addMarker(event.latLng, this.map);
     });
-
-    
   }
-
 
   infowindow = new google.maps.InfoWindow({
 
@@ -261,15 +263,36 @@ export class Example_2Page {
       });
       this.infowindow.open(this.map, marker);
     });
+
+    this.markers.push(marker);
   }
 
-  populateMarkers(){
+  setMapOnAll(map) {
+    for (var i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(map);
+    }
+  }
 
+  // Removes the markers from the map, but keeps them in the array.
+  clearMarkers() {
+    this.setMapOnAll(null);
+  }
+
+  populateMarkers(event){
+    
     let mapMarkers: MapMarker[]  = this.mapMarkerService.getMapMarkers();
-    for (let index in mapMarkers) {
+    let mapMarkers2: MapMarker[];
+    
+    if(this.eventType != undefined && this.eventType.length != 0){
+      let events = event;
+      mapMarkers2 = [];
+      this.clearMarkers();
+      mapMarkers2 = _.filter(mapMarkers, function(marker){
+        return _.contains(events,marker.category) })
+    }
 
+    for (let index in mapMarkers2) {
       let newMapMarker: MapMarker = mapMarkers[index];
-
       this.addMarker(newMapMarker,this.map);
     }
   }
