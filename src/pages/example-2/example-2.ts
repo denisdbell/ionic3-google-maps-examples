@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MapMarker } from '../../app/models/MapMarker';
+import { MapMarkerService } from '../../app/services/map_marker_service';
 
 declare const google;
 
@@ -8,6 +9,7 @@ declare const google;
 @Component({
   selector: 'page-example-2',
   templateUrl: 'example-2.html',
+  providers: [ MapMarkerService ]
 })
 export class Example_2Page {
 
@@ -30,11 +32,12 @@ export class Example_2Page {
 
   labelIndex = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private mapMarkerService: MapMarkerService) {
   }
 
   ionViewDidLoad() {
     this.startMap();
+    this.populateMarkers();
   }
 
   startMap() {
@@ -232,7 +235,8 @@ export class Example_2Page {
     });
     
     google.maps.event.addListener(this.map, 'click', (event) => {
-      this.addMarker(event.latLng, this.map);
+      console.log(event.latLng);
+      //this.addMarker(event.latLng, this.map);
     });
 
     
@@ -244,12 +248,12 @@ export class Example_2Page {
   });
 
 
-  addMarker(location, map) {
+  addMarker( mapMarker: MapMarker ,map) {
     let marker = new google.maps.Marker({
-      position: location,
-      label: this.labels[this.labelIndex++ % this.labels.length],
+      position: new google.maps.LatLng(mapMarker.latitude,mapMarker.longitude),
+      label: this.labels[mapMarker.label],
       map: map,
-      icon: '../assets/icon/guinness.png'
+      icon: '../assets/icon/' + mapMarker.icon
     });
 
     google.maps.event.addListener(marker, 'click', (event) => {
@@ -257,7 +261,14 @@ export class Example_2Page {
     });
   }
 
+  populateMarkers(){
 
+    let mapMarkers: MapMarker[]  = this.mapMarkerService.getMapMarkers();
+    for (let index in mapMarkers) {
 
+      let newMapMarker: MapMarker = mapMarkers[index];
 
+      this.addMarker(newMapMarker,this.map);
+    }
+  }
 }
