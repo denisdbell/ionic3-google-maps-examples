@@ -240,7 +240,7 @@ export class Example_2Page {
     });
     
     google.maps.event.addListener(this.map, 'click', (event) => {
-      console.log(event.latLng);
+      console.log("Latitude: " + event.latLng.lat() + " " + ", longitude: " + event.latLng.lng()) ;
       //this.addMarker(event.latLng, this.map);
     });
   }
@@ -287,12 +287,20 @@ export class Example_2Page {
       let events = event;
       mapMarkers2 = [];
       this.clearMarkers();
-      mapMarkers2 = _.filter(mapMarkers, function(marker){
-        return _.contains(events,marker.category) })
+
+      for (let index in mapMarkers) {
+        let newMapMarker: MapMarker = mapMarkers[index];
+
+        console.log("events " + events + " newMapMarker.category " + newMapMarker.category + " " + _.contains(events,newMapMarker.category) );
+        if( _.contains(events,newMapMarker.category) ){
+          mapMarkers2.push(newMapMarker)
+        }
+      }
     }
 
     for (let index in mapMarkers2) {
-      let newMapMarker: MapMarker = mapMarkers[index];
+      console.log("Being Added " + mapMarkers);
+      let newMapMarker: MapMarker = mapMarkers2[index];
       this.addMarker(newMapMarker,this.map);
     }
   }
