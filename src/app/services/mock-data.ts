@@ -174,7 +174,7 @@ export const MAPMARKERS: MapMarker[] = [
     {  
         label: "promotion",
         icon: "promotion.png",
-        description: "<h3>3 Guiness For $500.00 JMD Fyah Side Jerk</h3>",
+        description: "<div style='text-align: center'>3 Guiness For $500.00 JMD Fyah Side Jerk</br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
         category: "promotion",
         latitude: 17.970321 ,
         longitude:  -77.352052
@@ -182,7 +182,7 @@ export const MAPMARKERS: MapMarker[] = [
     {  
         label: "promotion",
         icon: "promotion.png",
-        description: "3 Guiness For $900.00 JMD At Ribbiz</br>"+ "<img src='../assets/share.png'>",
+        description: " <div style='text-align: center'>3 Guiness For $900.00 JMD At Ribbiz</br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
         category: "promotion",
         latitude: 18.029555,
         longitude: -76.777686
@@ -210,5 +210,125 @@ export const MAPMARKERS: MapMarker[] = [
         category: "highlight",
         latitude: 18.276302250871954, 
         longitude: -78.13751220703125
-    }
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>SPD Celebration and GSOG Launch </strong> </br> <i> March 15, 8 PM to 12 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "highlight",
+        latitude:  18.015187,
+        longitude: -76.790306 
+    },
+    {  
+        label: "event",
+        icon: "trailer.png",
+        description: "<div style='text-align: center'><strong>Traila Load Wednesdays</strong> </br> <i> March 28, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Aidonia Birthday Negril</strong> </br> <i> March 30, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Aidonia Birthday Negril</strong> </br> <i> March 30, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Aidonia Birthday Ocho Rios</strong> </br> <i> March 31, 12 AM to 3 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  18.406835,
+        longitude: -77.110819
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Traila Load Wednesdays</strong> </br> <i> April 25, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> May 25, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Traila Load Wednesdays</strong> </br> <i> May 30, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> June 1, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Pan di Plaza</strong> </br> <i> June 2, 12:00 PM to 3:00 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> June 8, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> June 15, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> June 22, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>Traila Load Wednesdays</strong> </br> <i> June 27, 11 PM to 2 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
+    {  
+        label: "event",
+        icon: "event.png",
+        description: "<div style='text-align: center'><strong>GSOG</strong> </br> <i> June 27, 11:30 PM to 2:30 AM </i></br>"+ "<a href='#'>view more</a>" + "</br><img src='../assets/share.png'></div>",
+        category: "event",
+        latitude:  17.999678,
+        longitude: -76.784268
+    },
 ]
